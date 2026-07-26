@@ -1,0 +1,222 @@
+const PROJECTS_DATA = [
+  {
+    id: "dominos-pizza-analysis",
+    title: "Domino's Pizza Order and Revenue Analysis",
+    category: "sql",
+    tools: ["PostgreSQL", "Excel"],
+    date: "Jun 2026",
+    client: "Personal Project",
+    type: "Relational DB Design & SQL Analysis",
+    summary: "Designed a 5-table normalized SQL database schema to analyze 100,000+ sales transactions, identifying peak sales windows, top revenue drivers, and customer purchasing patterns.",
+    iconBg: "linear-gradient(135deg, #FF4B2B, #FF416C)",
+    iconText: "🍕",
+    externalLink: "https://github.com/reshantdewangan/dominos-pizza-sql-analysis",
+    problem: "A fast-food chain needed visibility into hourly ordering patterns, top-performing menu items, revenue distribution, and customer retention metrics across multiple locations to optimize inventory and staffing.",
+    approach: "Designed a 3NF normalized schema in PostgreSQL comprising 5 interconnected tables (Orders, Order Details, Pizza Types, Pizzas, Categories). Imported 100K+ raw CSV records, applied foreign key constraints, and constructed 20+ advanced SQL queries utilizing CTEs, window functions (RANK, DENSE_RANK), and DATE_TRUNC time-series aggregations.",
+    insights: [
+      "Analyzed 100,000+ transaction records across 5 normalized relational database tables.",
+      "Identified peak ordering hours between 1:00 PM – 3:00 PM and 7:00 PM – 9:00 PM, contributing 48% of total daily volume.",
+      "Discovered a 65% repeat customer rate and identified top 3 pizzas generating over $400,000 in total revenue.",
+      "Formulated 15+ core KPIs including Average Order Value (AOV), cumulative revenue growth, and category-wise sales mix."
+    ],
+    impact: "Provided actionable recommendations to optimize inventory stock during peak rush hours, re-allocate staff shift scheduling, and launch targeted promotional combo deals for slow weekday afternoons."
+  },
+  {
+    id: "olympics-history-analysis",
+    title: "120 Years of Olympic's History Data Analysis",
+    category: "sql",
+    tools: ["PostgreSQL", "Excel"],
+    date: "May 2026",
+    client: "Historical Dataset",
+    type: "SQL Analytics & Data Cleaning",
+    summary: "Executed complex SQL queries on 120 years of historical Olympic Games data (270,000+ athlete entries) to reveal country performance trends, age dynamics, and multi-medal dominance.",
+    iconBg: "linear-gradient(135deg, #11998e, #38ef7d)",
+    iconText: "🥇",
+    externalLink: "https://github.com/reshantdewangan/olympics-sql-analysis",
+    problem: "Historical sports data spans over 120 years with inconsistencies in country names, missing age data, and varying event formats, requiring systematic SQL modeling to extract accurate sports insights.",
+    approach: "Cleaned and transformed 270,000+ records in PostgreSQL using text manipulation, CASE statements, COALESCE functions, and analytical window functions to rank participating nations and multi-medal athletes across 30+ editions.",
+    insights: [
+      "Processed 270,000+ athlete participation records spanning from 1896 to 2016.",
+      "Identified top 10 all-time medal winning nations and analyzed historical trends before and after host-nation events.",
+      "Mapped age distribution shifts across different sports disciplines (e.g., gymnastics vs. equestrian).",
+      "Extracted top individual athletes with 5+ career gold medals using SQL subqueries and joins."
+    ],
+    impact: "Demonstrated advanced historical dataset modeling and scalable SQL querying capabilities for sports analytics and broadcast statistics."
+  },
+  {
+    id: "shopnest-sales-analysis",
+    title: "ShopNest Sales & Revenue Analysis",
+    category: "powerbi",
+    tools: ["Power BI", "Python"],
+    date: "Mar 2026",
+    client: "E-Commerce Business",
+    type: "Interactive BI Dashboard",
+    summary: "Built an end-to-end Power BI dashboard integrating Python-cleaned sales data to track monthly revenue streams, regional sales performance, and product profitability.",
+    iconBg: "linear-gradient(135deg, #654ea3, #eaafc8)",
+    iconText: "📊",
+    externalLink: "https://github.com/reshantdewangan/shopnest-powerbi-analysis",
+    problem: "E-commerce stakeholders lacked real-time visibility into sales funnels, regional revenue bottlenecks, and product return rates across multiple product categories.",
+    approach: "Utilized Python (Pandas) for data wrangling and missing value imputation. Designed a dynamic Power BI star schema, wrote DAX measures for Year-Over-Year (YoY) growth, total sales, and profit margin, and designed intuitive drill-through report pages.",
+    insights: [
+      "Integrated multi-channel sales data into a unified star-schema data model in Power BI.",
+      "Built custom DAX measures for YoY sales growth, month-to-date (MTD) revenue, and customer lifetime value.",
+      "Uncovered 3 primary product categories generating 62% of net operating profit.",
+      "Identified high return rates in specific regional hubs, pin-pointing logistics delays."
+    ],
+    impact: "Enabled executive team to monitor daily KPI fluctuations and re-allocate advertising spend towards top-performing regions, resulting in an estimated 12% revenue lift."
+  },
+  {
+    id: "bengaluru-complaint-analysis",
+    title: "Bengaluru Municipal Complaint Analysis",
+    category: "sql",
+    tools: ["PostgreSQL", "Excel"],
+    date: "Feb 2026",
+    client: "Civic Analytics",
+    type: "SQL Geospatial & SLA Tracking",
+    summary: "Analyzed municipal civic complaint records to evaluate ward-level resolution times, department responsiveness, and Service Level Agreement (SLA) compliance rates.",
+    iconBg: "linear-gradient(135deg, #4e54c8, #8f94fb)",
+    iconText: "🏙️",
+    externalLink: "https://github.com/reshantdewangan/bengaluru-complaints-sql",
+    problem: "Municipal authorities faced growing complaint backlogs without clear metrics on department efficiency, average resolution turnaround time, or ward-wise grievance intensity.",
+    approach: "Designed SQL queries to compute SLA breach percentages, turnaround times by complaint type (potholes, water supply, garbage), and ward rank performance indices across all municipal zones.",
+    insights: [
+      "Analyzed municipal grievance logs across 198 city wards.",
+      "Identified that 34% of complaints exceeded standard 72-hour SLA resolution windows.",
+      "Highlighted top 3 recurring complaint categories: roads/potholes, sanitation, and streetlights.",
+      "Ranked all 198 wards by resolution efficiency index."
+    ],
+    impact: "Provided municipal administrators with data-backed recommendations to reassign workforce units to high-complaint wards and streamline escalation workflows."
+  },
+  {
+    id: "amazon-electronics-analysis",
+    title: "Amazon Electronics Sales & Ratings Analysis",
+    category: "python",
+    tools: ["Python", "Power BI"],
+    date: "Jan 2026",
+    client: "Retail & Sentiment",
+    type: "EDA & Rating Correlation",
+    summary: "Analyzed pricing, discount strategies, and customer rating distributions across 10,000+ Amazon electronics products using Python EDA and Power BI visualizations.",
+    iconBg: "linear-gradient(135deg, #f857a6, #ff5858)",
+    iconText: "📦",
+    externalLink: "https://github.com/reshantdewangan/amazon-electronics-python",
+    problem: "Understanding how discount percentages impact product star ratings, customer review volume, and sales volume in competitive consumer electronics categories.",
+    approach: "Cleaned messy price strings, calculated actual discount percentages, performed correlation matrix analyses in Python (Pandas/Seaborn), and designed an executive summary dashboard in Power BI.",
+    insights: [
+      "Processed price, discount, rating, and review count data for 10,000+ electronics items.",
+      "Discovered that products with 30-50% discounts had higher review volumes without degrading rating scores.",
+      "Identified sweet-spot price points per category that maximize both volume and customer rating.",
+      "Detected outlier products with high discounts but low ratings due to quality complaints."
+    ],
+    impact: "Helped sellers refine pricing and promotional strategies to optimize rating scores and increase product search visibility on e-commerce platforms."
+  },
+  {
+    id: "mental-health-tech-analysis",
+    title: "Mental Health in Tech Workplace Analysis",
+    category: "python",
+    tools: ["Python", "SciPy"],
+    date: "Dec 2025",
+    client: "HR & Org Behavior",
+    type: "Statistical Analysis & Survey EDA",
+    summary: "Statistical evaluation of tech employee survey responses to assess willingness to seek treatment, workplace resources awareness, and mental health stigma.",
+    iconBg: "linear-gradient(135deg, #2193b0, #6dd5ed)",
+    iconText: "🧠",
+    externalLink: "https://github.com/reshantdewangan/mental-health-tech-eda",
+    problem: "Tech organizations struggle to quantify how employee awareness of health benefits impacts treatment seeking and workplace productivity.",
+    approach: "Utilized Python for data cleaning, categorical encoding, cross-tabulation, and chi-square statistical hypothesis testing to identify significant workplace factors.",
+    insights: [
+      "Analyzed survey feedback from tech workers across global regions.",
+      "Found a strong positive correlation between clear HR policy communication and employee willingness to seek help.",
+      "Identified remote vs. in-office disparities in benefit awareness.",
+      "Formulated recommendations for HR intervention strategies."
+    ],
+    impact: "Provided evidence-based recommendations for corporate HR leadership to improve benefit accessibility and reduce workplace wellness stigma."
+  },
+  {
+    id: "hotel-booking-analysis",
+    title: "Hotel Booking Cancellation & Demand Analysis",
+    category: "python",
+    tools: ["Python", "Seaborn"],
+    date: "Nov 2025",
+    client: "Hospitality Industry",
+    type: "Exploratory Data Analysis",
+    summary: "Analyzed guest booking patterns, lead times, deposit types, and cancellation drivers for resort and city hotels to minimize revenue loss.",
+    iconBg: "linear-gradient(135deg, #eb3349, #f45c43)",
+    iconText: "🏨",
+    externalLink: "https://github.com/reshantdewangan/hotel-booking-cancellation-eda",
+    problem: "High cancellation rates (up to 37%) created severe revenue forecasting challenges and unoptimized room inventory for hotel management.",
+    approach: "Conducted bivariate and multivariate EDA in Python. Evaluated cancellation rates by lead time, market segment, country of origin, and room type modifications.",
+    insights: [
+      "Analyzed 119,000+ booking records for city and resort hotels.",
+      "Discovered that lead times greater than 90 days correlated with a 50%+ cancellation risk.",
+      "Non-refundable deposit types significantly reduced cancellations compared to no-deposit bookings.",
+      "Identified peak booking months and ADR (Average Daily Rate) fluctuations."
+    ],
+    impact: "Recommended overbooking thresholds, non-refundable deposit policies for long lead-time bookings, and seasonal pricing adjustments."
+  },
+  {
+    id: "zepto-inventory-analysis",
+    title: "Zepto Inventory & Pricing Analysis",
+    category: "sql",
+    tools: ["PostgreSQL", "Excel"],
+    date: "Oct 2025",
+    client: "Quick-Commerce",
+    type: "SQL Stocking & Pricing Intelligence",
+    summary: "Analyzed quick-commerce item pricing, category markups, and stock availability across urban dark stores to identify high-margin SKUs.",
+    iconBg: "linear-gradient(135deg, #8E2DE2, #4A00E0)",
+    iconText: "⚡",
+    externalLink: "https://github.com/reshantdewangan/zepto-pricing-sql",
+    problem: "Quick-commerce businesses operate on slim margins and fast turnover, requiring precise category margin tracking and out-of-stock monitoring.",
+    approach: "Designed PostgreSQL queries to categorize SKUs into velocity tiers, computed effective discount percentages, and evaluated category revenue share.",
+    insights: [
+      "Analyzed 5,000+ quick-commerce products across multiple categories.",
+      "Identified top 10% highest-margin items generating 40% of gross profits.",
+      "Detected recurring stock-out patterns in fresh produce during peak morning hours.",
+      "Evaluated pricing variance between national brands and private label alternatives."
+    ],
+    impact: "Formulated replenishment schedule optimizations and recommended prominent app placement for high-margin private label products."
+  },
+  {
+    id: "bike-sharing-eda",
+    title: "Bike Sharing Demand – Data Cleaning & EDA",
+    category: "python",
+    tools: ["Python", "Seaborn"],
+    date: "Sep 2025",
+    client: "Urban Mobility",
+    type: "Time-Series EDA & Weather Impact",
+    summary: "Investigated weather conditions, temperature, humidity, and calendar events affecting hourly bike rental demand.",
+    iconBg: "linear-gradient(135deg, #1D976C, #93F9B9)",
+    iconText: "🚲",
+    externalLink: "https://github.com/reshantdewangan/bike-sharing-eda",
+    problem: "Predicting hourly bike fleet distribution needs based on fluctuating weather conditions and workday commuting cycles.",
+    approach: "Preprocessed time-series data in Pandas, engineered features for day of week and rush hour windows, and visualized non-linear weather relationships using Seaborn.",
+    insights: [
+      "Analyzed 17,000+ hourly bike rental records.",
+      "Identified peak demand spikes during 8:00 AM and 5:00 PM on working days.",
+      "Discovered exponential drop-off in rental volume when humidity exceeded 75% or temperature fell below 10°C.",
+      "Compared casual ridership (weekend heavy) vs. registered subscriber patterns (commute heavy)."
+    ],
+    impact: "Provided operational insights for fleet repositioning strategies before morning and evening rush hours."
+  },
+  {
+    id: "employee-performance-analysis",
+    title: "Employee Performance Analysis",
+    category: "python",
+    tools: ["Python", "Seaborn"],
+    date: "Aug 2025",
+    client: "People Analytics",
+    type: "HR Analytics & Performance Factors",
+    summary: "Evaluated department-wise employee performance ratings, training hours, work-life balance scores, and attrition indicators.",
+    iconBg: "linear-gradient(135deg, #3A1C71, #D76D77, #FFAF7B)",
+    iconText: "👔",
+    externalLink: "https://github.com/reshantdewangan/employee-performance-python",
+    problem: "Identifying key predictors of top employee performance ratings and understanding factors contributing to workforce attrition.",
+    approach: "Performed multivariate correlation analysis in Python, evaluated performance distribution across departments, and correlated training investment with rating upgrades.",
+    insights: [
+      "Processed HR performance data for 1,500+ employees.",
+      "Found that employees completing 20+ training hours annually scored 25% higher in performance reviews.",
+      "Identified high workload and low satisfaction scores as primary drivers for department attrition.",
+      "Created departmental performance heatmaps for HR leadership."
+    ],
+    impact: "Suggested structured upskilling programs and workload balancing policies to improve retention and top-tier performance output."
+  }
+];

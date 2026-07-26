@@ -1,0 +1,4 @@
+i am a data analyst and i have attached my resume. I am building my portfolio website and i want to write a product requirement document. Take all the information from my resume and i have also attached an inspiration website. You can pick the colour theme, text and font from the screenshot attached..
+
+
+i have added my product requirement document for my portfolio website in the root folder, my resume and design inspiration in website inspo (screenshots attached). PRD should have all the info about the design but make sure you also checkout the website inspo folder as well the information about my profile can be found in my resume. Build me a portfolio website.
